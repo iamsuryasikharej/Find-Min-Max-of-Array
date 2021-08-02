@@ -19,12 +19,12 @@ public class FindMinMax {
     }
     public int[] findMinmax(int low, int high) // The method to be recursively called; low is lower bound high is higher bound
     {
-        if(low==high)
+        if(low==high)  // Recursion terminating condition 1
         {
             int[] res={high,low};
             return res;
         }
-        if(low==(high-1))
+        if(low==(high-1)) //Recursion terminating condition 2
         {
             int res[]=new int[2];
             if(A[low]>A[high])
@@ -43,8 +43,8 @@ public class FindMinMax {
 
 
 
-        int[] leftMaxMin=findMinmax(low, (low+high)/2);
-        int[] rightMaxMin=findMinmax(((low+high)/2),high);
+        int[] leftMaxMin=findMinmax(low, (low+high)/2);//recursive call to find the max and min of left part
+        int[] rightMaxMin=findMinmax(((low+high)/2),high); //recursive call to find the max and min of right part
 
 
         int max1=leftMaxMin[0];
@@ -68,7 +68,7 @@ public class FindMinMax {
         {
             finalResult[1]=min2;
         }
-        return finalResult;
+        return finalResult; //returning the final result
 
     }
     
